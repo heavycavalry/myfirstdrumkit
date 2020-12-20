@@ -23,32 +23,32 @@ function onKeyPress(ev) {
             sound = document.querySelector('#hihat');
             changeColor(".player3");
             break;
-        case 'KeyE':
+        case 'KeyF':
             soundName = 'kick';
             sound = document.querySelector('#kick');
             changeColor(".player4");
             break;
-        case 'KeyF':
+        case 'KeyG':
             soundName = 'hat';
             sound = document.querySelector('#hat');
             changeColor(".player5");
             break;
-        case 'KeyG':
+        case 'KeyH':
             soundName = 'ride';
             sound = document.querySelector('#ride');
             changeColor(".player6");
             break;
-        case 'KeyH':
+        case 'KeyJ':
             soundName = 'snare';
             sound = document.querySelector('#snare');
             changeColor(".player7");
             break;
-        case 'KeyI':
+        case 'KeyK':
             soundName = 'tink';
             sound = document.querySelector('#tink');
             changeColor(".player8");
             break;
-        case 'KeyJ':
+        case 'KeyL':
             soundName = 'way';
             sound = document.querySelector('#way');
             changeColor(".player9");
