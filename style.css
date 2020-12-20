@@ -1,0 +1,88 @@
+body,
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(18, 3, 105);
+    margin: 0;
+}
+
+.title {
+    font-size: 60px;
+    padding: 40px;
+}
+
+.text {
+    font-size: 20px;
+    padding: 20px;
+}
+
+#playBtn {
+    border: none;
+    font-size: 30px;
+    background-color: rgb(240, 206, 253);
+    margin: 150px;
+    height: 5rem;
+    cursor: pointer;
+    width: 40rem;
+    transition: width 2s;
+}
+
+#playBtn:hover {
+    width: 42rem;
+
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.press {
+    background: rgb(18, 3, 105) !important;
+}
+
+.buttons>div {
+    height: 150px;
+}
+
+.player1 {
+    background: cornflowerblue;
+}
+
+.player2 {
+    background: lightcoral;
+}
+
+.player3 {
+    background: rgb(255, 255, 171);
+}
+
+.player4 {
+    background: rgb(160, 255, 157);
+}
+
+.player5 {
+    background: rgb(248, 101, 241);
+}
+
+.player6 {
+    background: rgb(220, 131, 255);
+}
+
+.player7 {
+    background: rgb(255, 84, 84);
+}
+
+.player8 {
+    background: rgb(46, 114, 241);
+}
+
+.player9 {
+    background: rgb(100, 221, 237);
+}
+
+audio {
+    display: none;
+}
