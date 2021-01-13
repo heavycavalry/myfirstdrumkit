@@ -9,6 +9,7 @@ body {
     padding: 0;
     background-color: rgb(255, 255, 255);
     margin: 0;
+    overflow: hidden;
 }
 
 .title {
@@ -17,22 +18,6 @@ body {
 
 .text {
     font-size: 1.2rem;
-}
-
-#playBtn {
-    border: none;
-    font-size: 2rem;
-    background-color: rgb(240, 206, 253);
-    padding: 1rem;
-    margin: 5rem;
-    cursor: pointer;
-    width: 30rem;
-    transition: 1s;
-    outline: none;
-}
-
-#playBtn:hover {
-    background-color: rgb(255, 98, 203);
 }
 
 

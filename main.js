@@ -1,8 +1,63 @@
 document.body.addEventListener('keypress', onKeyPress);
-document.querySelector('#playBtn').addEventListener('click', playChannel);
-const channel = [];
-const recordStart = Date.now();
 
+class Channel {
+    constructor(nr) {
+        this.number = nr;
+        this.music = [];
+        this.playBtn = document.getElementById(`play${nr}`);
+        this.playBtn.addEventListener("click", ev => this.playChannel(this))
+
+        this.recordBtn = document.getElementById(`rec${nr}`);
+        console.log(`#rec${nr}`);
+        console.dir(this.recordBtn);
+        this.recordBtn.addEventListener("click", ev => this.recordChannel(this));
+
+        this.isRecorded = false;
+        this.recordStart;
+        this.stopBtn = document.getElementById(`stop${nr}`)
+        this.stopBtn.addEventListener("click", ev => this.stopChannel(this));
+    }
+
+    playChannel(channel) {
+        for (let index = 0; index < this.music.length; index++) {
+            const soundObject = this.music[index];
+            setTimeout(
+                () => {
+                    playSound(soundObject.sound);
+                },
+                soundObject.time
+            );
+        }
+    }
+
+    recordChannel(channel) {
+        channel.music = [];
+        channel.isRecorded = true;
+        channel.recordStart = Date.now();
+        channel.recordBtn.style.backgroundColor = "red";
+    }
+
+    stopChannel(channel) {
+        this.isRecorded = false;
+        this.recordBtn.style.backgroundColor = "blue";
+    }
+
+
+    recordSound(soundName) {
+        if (this.isRecorded) {
+            const keyPressTime = Date.now() - this.recordStart;
+            const recordedSound = {
+                sound: soundName,
+                time: keyPressTime
+            };
+            this.music.push(recordedSound);
+        }
+    }
+}
+
+
+
+channels = [new Channel(1), new Channel(2), new Channel(3), new Channel(4)]
 
 function onKeyPress(ev) {
     let sound;
@@ -55,30 +110,14 @@ function onKeyPress(ev) {
             break;
     }
 
-
     if (sound) {
-        const keyPressTime = Date.now() - recordStart;
-        const recordedSound = {
-            sound: soundName,
-            time: keyPressTime
-        };
-        channel.push(recordedSound);
+        channels.forEach(channel => {
+            channel.recordSound(soundName)
+        });
         sound.play();
     }
 }
 
-function playChannel() {
-    for (let index = 0; index < channel.length; index++) {
-        const soundObject = channel[index];
-        setTimeout(
-            () => {
-                playSound(soundObject.sound);
-            },
-            soundObject.time
-        );
-    }
-
-}
 
 function playSound(soundName) {
     const sound = document.querySelector('#' + soundName);
