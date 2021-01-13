@@ -38,8 +38,8 @@ class Channel {
     }
 
     stopChannel(channel) {
-        this.isRecorded = false;
-        this.recordBtn.style.backgroundColor = "blue";
+        channel.isRecorded = false;
+        channel.recordBtn.style.backgroundColor = "blue";
     }
 
 
