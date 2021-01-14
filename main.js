@@ -34,12 +34,12 @@ class Channel {
         channel.music = [];
         channel.isRecorded = true;
         channel.recordStart = Date.now();
-        channel.recordBtn.style.backgroundColor = "red";
+        channel.recordBtn.style.backgroundColor = "#AF7AC5";
     }
 
     stopChannel(channel) {
         channel.isRecorded = false;
-        channel.recordBtn.style.backgroundColor = "blue";
+        channel.recordBtn.style.backgroundColor = "#CCCCFF";
     }
 
 
